@@ -8,7 +8,7 @@ Python wrapper for FileWave api.
 
 edit lines 9 & 10 with your encoded API key and server address
 
-The fw_apy.py file can be used on it's own or in oyur own projects. The rest of the files in this repo are examples or supporting files for the examples.
+The fw_apy.py file can be used on it's own or in your own projects. The rest of the files in this repo are examples or supporting files for the examples.
 
 
 # fw_device_details.py
