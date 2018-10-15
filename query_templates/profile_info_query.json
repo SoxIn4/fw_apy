@@ -1,0 +1,57 @@
+{
+    "criteria": {
+        "column": "filewave_client_name",
+        "component": "Client",
+        "operator": "is",
+        "qualifier": null
+    },
+    "fields": [
+        {
+            "column": "payload_identifier",
+            "component": "AppleProfile",
+            "display_name": "Payload Identifier"
+        },
+        {
+            "column": "payload_version",
+            "component": "AppleProfile",
+            "display_name": "Payload Version"
+        },
+        {
+            "column": "payload_display_name",
+            "component": "AppleProfile",
+            "display_name": "Payload Display Name"
+        },
+        {
+            "column": "payload_description",
+            "component": "AppleProfile",
+            "display_name": "Payload Description"
+        },
+        {
+            "column": "payload_organization",
+            "component": "AppleProfile",
+            "display_name": "Payload Organization"
+        },
+        {
+            "column": "payload_removal_disallowed",
+            "component": "AppleProfile",
+            "display_name": "Payload Removal Disallowed"
+        },
+        {
+            "column": "has_removal_passcode",
+            "component": "AppleProfile",
+            "display_name": "Has Removal Passcode"
+        },
+        {
+            "column": "is_encrypted",
+            "component": "AppleProfile",
+            "display_name": "Is Encrypted"
+        },
+        {
+            "column": "user_name",
+            "component": "AppleProfile",
+            "display_name": "User Name"
+        }
+    ],
+    "main_component": "Client",
+    "name": "Single Client Profiles"
+}

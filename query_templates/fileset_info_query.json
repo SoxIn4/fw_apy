@@ -1,0 +1,67 @@
+{
+    "criteria": {
+        "column": "filewave_client_name",
+        "component": "Client",
+        "operator": "is",
+        "qualifier": null
+    },
+    "fields": [
+        {
+            "column": "filewave_client_name",
+            "component": "Client",
+            "display_name": "FileWave Client Name"
+        },
+        {
+            "column": "fileset_id",
+            "component": "Fileset",
+            "display_name": "Fileset ID"
+        },
+        {
+            "column": "name",
+            "component": "Fileset",
+            "display_name": "Name"
+        },
+        {
+            "column": "version",
+            "component": "Fileset",
+            "display_name": "Version"
+        },
+        {
+            "column": "comment",
+            "component": "Fileset",
+            "display_name": "Comment"
+        },
+        {
+            "column": "install_size",
+            "component": "Fileset",
+            "display_name": "Install Size"
+        },
+        {
+            "column": "type",
+            "component": "Fileset",
+            "display_name": "Type"
+        },
+        {
+            "column": "has_osx_sip_issue",
+            "component": "Fileset",
+            "display_name": "macOS 10.11 SIP Incompatible"
+        },
+        {
+            "column": "has_sip_issue_10_12",
+            "component": "Fileset",
+            "display_name": "macOS 10.12 SIP Incompatible"
+        },
+        {
+            "column": "install_date",
+            "component": "Fileset",
+            "display_name": "Install Date"
+        },
+        {
+            "column": "kiosk",
+            "component": "Fileset",
+            "display_name": "Kiosk"
+        }
+    ],
+    "main_component": "Fileset",
+    "name": "Single Client Filesets"
+}

@@ -1,0 +1,31 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    {% for query in order %}
+        <h1> {{query[1]}} </h1>
+        <table class='table table-striped table-bordered table-responsive'>
+        <thead>
+            {% for header in queries[query[0]]['fields'] %}
+              <th>{{header['display_name']}}</th>
+            {% endfor %}
+        </thead>
+        <tbody>
+        {% for row in results[query[0]]['values'] %}
+            <tr>
+                {% for field in row %}
+                    <td>{{field}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    {% endfor %}
+</body>
+</html>

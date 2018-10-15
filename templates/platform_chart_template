@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--Pulling in Google Charts API-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+//Use our data from the array to draw the table
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Operating System', 'Number of Devices'],
+      {% for os, info in os_dict.items() %}
+        {{[os, info.count]}},
+      {% endfor %}
+      ]);
+
+
+    //note that there are HUNDREDS of options for Google Charts
+    var options = {
+        title: 'FW Clients by OS',
+        width: 900,
+        height: 500,
+        tooltip: {text: 'value'},
+        is3D: true
+    };
+
+	//go ahead and call the table draw
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    // The select handler. Call the chart's getSelection() method
+  	function selectHandler() {
+		var selectedItem = chart.getSelection()[0];
+    		if (selectedItem) {
+  				//here we are assigning the variable in javascript that will take the "name" that we can use in our link
+  				var value = data.getValue(selectedItem.row,0);
+				//when working with a java script, throwing a dialog can be a helpful troubleshooting tool
+				// alert('You selected ' + value);
+				//notice below that we are using a relative link specifically
+				window.location="/devices/" + value;
+		}
+  	}
+
+	google.visualization.events.addListener(chart, 'select', selectHandler);
+
+    chart.draw(data, options);
+}
+
+</script>
+</head>
+<body>
+    <!-- Pie chart will go in this div-->
+    <div id="piechart", align='center'></div>
+    <div id="totals", align='center'>
+        Totals: {% for os, info in os_dict.items() if info.count %}
+                    {{'{}: {}'.format(os, info.count)}}
+                {% endfor %}
+    </div>
+</body>
+</html>

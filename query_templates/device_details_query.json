@@ -1,0 +1,62 @@
+{
+    "criteria": {
+        "column": "filewave_client_name",
+        "component": "Client",
+        "operator": "is",
+        "qualifier": null
+    },
+    "fields": [
+        {
+            "column": "device_name",
+            "component": "Client",
+            "display_name": "Device Name"
+        },
+        {
+            "column": "serial_number",
+            "component": "Client",
+            "display_name": "Serial Number"
+        },
+        {
+            "column": "name",
+            "component": "OperatingSystem",
+            "display_name": "OS Name"
+        },
+        {
+            "column": "version",
+            "component": "OperatingSystem",
+            "display_name": "Version"
+        },
+        {
+            "column": "is_supervised",
+            "component": "IOSClient",
+            "display_name": "Is Supervised"
+        },
+        {
+            "column": "device_id",
+            "component": "Client",
+            "display_name": "Device ID"
+        },
+        {
+            "column": "last_check_in",
+            "component": "Client",
+            "display_name": "Last Check-in"
+        },
+        {
+            "column": "ram_size",
+            "component": "Client",
+            "display_name": "RAM Size"
+        },
+        {
+            "column": "free_disk_space",
+            "component": "Client",
+            "display_name": "Free Disk Space"
+        },
+        {
+            "column": "current_ip_address",
+            "component": "Client",
+            "display_name": "Current IP Address"
+        }
+    ],
+    "main_component": "Client",
+    "name": "Single Client"
+}

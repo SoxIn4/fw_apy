@@ -1,0 +1,92 @@
+{
+    "criteria": {
+        "column": "filewave_client_name",
+        "component": "Client",
+        "operator": "is",
+        "qualifier": null
+    },
+    "fields": [
+        {
+            "column": "name",
+            "component": "Application",
+            "display_name": "Name"
+        },
+        {
+            "column": "vendor",
+            "component": "Application",
+            "display_name": "Vendor"
+        },
+        {
+            "column": "version",
+            "component": "Application",
+            "display_name": "Version"
+        },
+        {
+            "column": "short_version",
+            "component": "Application",
+            "display_name": "Short Version"
+        },
+        {
+            "column": "path",
+            "component": "Application",
+            "display_name": "Install Path"
+        },
+        {
+            "column": "product_id",
+            "component": "Application",
+            "display_name": "Product ID"
+        },
+        {
+            "column": "size",
+            "component": "Application",
+            "display_name": "Size"
+        },
+        {
+            "column": "install_size",
+            "component": "Application",
+            "display_name": "Install Size"
+        },
+        {
+            "column": "install_date",
+            "component": "Application",
+            "display_name": "Install Date"
+        },
+        {
+            "column": "times_launched",
+            "component": "Application",
+            "display_name": "Times Launched"
+        },
+        {
+            "column": "total_time_used",
+            "component": "Application",
+            "display_name": "Total Time Used"
+        },
+        {
+            "column": "average_time_used",
+            "component": "Application",
+            "display_name": "Average Time Used"
+        },
+        {
+            "column": "first_launch_date",
+            "component": "Application",
+            "display_name": "First Launch Date"
+        },
+        {
+            "column": "last_launch_date",
+            "component": "Application",
+            "display_name": "Last Launch Date"
+        },
+        {
+            "column": "last_quit_date",
+            "component": "Application",
+            "display_name": "Last Quit Date"
+        },
+        {
+            "column": "is_validated",
+            "component": "Application",
+            "display_name": "Is Validated"
+        }
+    ],
+    "main_component": "Client",
+    "name": "Single Client Apps"
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--Pulling in Google Charts API-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['treemap']});
+google.charts.setOnLoadCallback(drawChart);
+
+//Use our data from the array to draw the table
+function drawChart() {
+    // alert('drawing chart')
+    var data = google.visualization.arrayToDataTable([
+      ['Operating System', 'Parent', 'Number of Devices'],
+      ['All Devices', null, 6000],
+      {% for os, info in os_dict.items() %}
+        {{[os, 'All Devices', info.count]}},
+      {% endfor %}
+      ]);
+    // alert('DATA: ' + data);
+
+    var options = {
+        minColor: '#f00',
+        midColor: '#ddd',
+        maxColor: '#0d0',
+        headerHeight: 15,
+        fontColor: 'black',
+        showScale: true
+    };
+
+	//go ahead and call the table draw
+    var chart = new google.visualization.TreeMap(document.getElementById("chart_div"));
+    // The select handler. Call the chart's getSelection() method
+  	function selectHandler() {
+		var selectedItem = chart.getSelection()[0];
+    		if (selectedItem) {
+  				//here we are assigning the variable in javascript that will take the "name" that we can use in our link
+  				var value = data.getValue(selectedItem.row,0);
+				//when working with a java script, throwing a dialog can be a helpful troubleshooting tool
+				//alert('You selected ' + value);
+				//notice below that we are using a relative link specifically
+				window.location="/devices/" + value;
+		}
+  	}
+
+	// google.visualization.events.addListener(chart, 'select', selectHandler);
+
+    chart.draw(data, options);
+}
+
+</script>
+</head>
+<body>
+    <!-- Pie chart will go in this div-->
+    <div id="chart_div" align="center" style="width: 900px; height: 500px;"></div>
+    <div id="totals" align="center">
+        Totals: {% for os, info in os_dict.items() if info.count %}
+                    {{'{}: {}'.format(os, info.count)}}
+                {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+	<!-- Bootstrap CSS makes it a cinch to have decent looking pages, easily -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<table style="width:100%; margin-left: auto; margin-right: auto;" border="2" cellspacing="2" cellpadding="2">
+<thead>
+    {% for header in headers %}
+      <th>{{header.display_name}}</th>
+    {% endfor %}
+</thead>
+<tbody>
+    {% for device in devices %}
+    <tr>
+          <td><a href='device_details/{{device[0]}}'>{{device[0]}}</a></td>
+          {% for field in device[1:] %}
+          <td>{{field}}</td>
+          {% endfor %}
+    </tr>
+    {% endfor %}
+
+</tbody>
+</table>
+
+</body>
+</html>
